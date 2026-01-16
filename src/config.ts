@@ -1,1 +1,1 @@
-export const basePath = '/therapywithkomal';
+export const basePath = '/';

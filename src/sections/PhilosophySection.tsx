@@ -79,7 +79,7 @@ export default function PhilosophySection() {
                             <div className="relative w-72 h-72 md:w-80 md:h-80 rounded-full p-1.5 bg-gradient-to-br from-slate-700 to-slate-900 shadow-2xl">
                                 <div className="w-full h-full rounded-full overflow-hidden border-4 border-slate-800 relative z-10">
                                     <img
-                                        src="/therapywithkomal/assets/therapist.png"
+                                        src="/assets/therapist.png"
                                         className="w-full h-full object-cover transition-transform duration-700 scale-100 hover:scale-120"
                                         alt="Komal Hotchandani"
                                     />

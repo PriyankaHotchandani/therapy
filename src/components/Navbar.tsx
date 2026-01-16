@@ -18,7 +18,7 @@ export default function Navbar() {
                 <a href="#">
                     <img
                         className="h-12 md:h-16 w-auto"
-                        src="/therapywithkomal/assets/logo.png"
+                        src="/assets/logo.png"
                         alt="logo"
                         width={420}
                         height={126}
