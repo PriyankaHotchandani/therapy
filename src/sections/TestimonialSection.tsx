@@ -41,7 +41,7 @@ export default function TestimonialSection() {
                             <div
                                 key={index}
                                 onClick={() => setActiveTestimonial(testimonial)}
-                                className="cursor-pointer transition-transform duration-300 active:scale-95 md:hover:scale-105 group h-full"
+                                className="cursor-pointer transition-transform duration-300 active:scale-95 md:hover:scale-105 group h-full select-none"
                             >
                                 <div
                                     className="relative h-[240px] overflow-hidden rounded-xl md:w-auto md:h-auto md:overflow-visible"
@@ -54,7 +54,7 @@ export default function TestimonialSection() {
                                     <div className="w-full h-full [&_*]:whitespace-normal [&_*]:break-words pointer-events-none">
                                         <TestimonialCard index={index} testimonial={testimonial} />
                                     </div>
-                                    <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-black via-black/80 to-transparent md:hidden rounded-b-xl z-10 pointer-events-none"></div>
+                                    <div className="absolute bottom-0 left-0 w-full h-28 bg-gradient-to-t from-black via-black/90 to-transparent md:hidden rounded-b-xl z-10 pointer-events-none"></div>
                                 </div>
                             </div>
                         ))}
@@ -86,8 +86,9 @@ export default function TestimonialSection() {
                                 </div>
                             </div>
 
+                            {/* SCROLLER IS HERE: Only appears in the modal */}
                             <div className="max-h-[60vh] overflow-y-auto pr-2 custom-scrollbar">
-                                <p className="text-slate-300 leading-relaxed text-base italic">
+                                <p className="text-slate-300 leading-relaxed text-base italic text-justify">
                                     "{activeTestimonial.quote}"
                                 </p>
                             </div>
