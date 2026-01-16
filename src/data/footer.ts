@@ -14,8 +14,6 @@ export const footerData: IFooter[] = [
     {
         title: "Patient Support",
         links: [
-            // Internal Link (You must write this specific to your payments)
-            { name: "FAQs", href: "#faqs" },
 
             // External Link to Government/NGO Help
             { name: "Emergency Helplines", href: "https://icallhelpline.org/" },

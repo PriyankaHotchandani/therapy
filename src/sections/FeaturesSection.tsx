@@ -16,12 +16,12 @@ export default function FeaturesSection() {
                         viewport={{ once: true }}
                         transition={{ delay: index * 0.15, type: "spring", stiffness: 320, damping: 70, mass: 1 }}
                     >
-                        <div className="p-6 rounded-xl space-y-4 border border-slate-800 bg-slate-950 max-w-80 w-full">
+                        <div className="p-6 rounded-xl space-y-4 border border-slate-800 bg-slate-950 max-w-80 w-full h-full">
                             {feature.icon}
                             <h3 className="text-base font-medium text-white">
                                 {feature.title}
                             </h3>
-                            <p className="text-slate-400 line-clamp-2 pb-4">
+                            <p className="text-slate-400 pb-4">
                                 {feature.description}
                             </p>
                         </div>

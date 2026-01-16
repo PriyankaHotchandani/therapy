@@ -5,8 +5,14 @@
     --font-poppins: "Poppins", sans-serif;
 }
 
+html,
 body {
-    @apply bg-black text-white text-sm antialiased font-poppins;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+body {
+    @apply bg-black text-white text-sm antialiased font-poppins overflow-x-hidden;
 }
 
 body::selection {
@@ -27,9 +33,11 @@ button {
     0% {
         background-position: 0% 50%;
     }
+
     50% {
         background-position: 100% 50%;
     }
+
     100% {
         background-position: 0% 50%;
     }
