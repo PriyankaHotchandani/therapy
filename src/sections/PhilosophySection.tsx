@@ -90,7 +90,7 @@ export default function PhilosophySection() {
                         <div className="mt-8 space-y-2">
                             <h3 className="text-3xl font-bold text-slate-100 tracking-tight">Komal Hotchandani</h3>
                             <div className="inline-block px-3 py-1 rounded-full bg-pink-500/10 border border-pink-500/20">
-                                <p className="text-pink-400 text-sm font-medium tracking-wide">Lead Clinical Psychologist</p>
+                                <p className="text-pink-400 text-sm font-medium tracking-wide">Lead Counselling Psychologist</p>
                             </div>
                             <p className="text-slate-500 text-sm">M.A. Counselling Psychology</p>
                         </div>
