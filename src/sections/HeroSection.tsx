@@ -13,21 +13,28 @@ export default function HeroSection() {
     return (
         <div className="relative flex flex-col items-center justify-center px-4 md:px-16 lg:px-24 xl:px-32">
             <div className="absolute top-30 -z-10 left-1/4 size-72 bg-pink-600 blur-[300px]"></div>
-            <motion.a href="#!" className="group flex items-center gap-2 rounded-full p-1 pr-3 mt-44 text-pink-100 bg-pink-200/15"
+
+            <motion.a
+                href="mailto:healwithkomalhotchandani@gmail.com?subject=Request:%20Free%20Introductory%20Call&body=Hi,%0D%0A%0D%0AI%20am%20interested%20in%20therapy%20but%20have%20a%20few%20questions%20first.%20I%20would%20like%20to%20schedule%20a%20free%20introductory%20call.%0D%0A%0D%0AMy%20Name:%20%0D%0AMy%20Age:%20"
+                className="group inline-flex items-center gap-3 p-1.5 pr-4 rounded-full bg-pink-200/10 border border-white/10 hover:border-pink-500/30 transition-all mt-44 text-pink-100 w-fit max-w-full"
                 initial={{ y: -20, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2, type: "spring", stiffness: 320, damping: 70, mass: 1 }}
             >
-                <span className="bg-pink-800 text-white text-xs px-3.5 py-1 rounded-full">
+                <span className="bg-pink-700 text-white text-[10px] font-bold px-3 py-1 rounded-full ml-1 shrink-0">
                     NEW
                 </span>
-                <p className="flex items-center gap-1">
-                    <a href="mailto:yourmom@email.com?subject=Request:%20Free%20Introductory%20Call&body=Hi,%0D%0A%0D%0AI%20am%20interested%20in%20therapy%20but%20have%20a%20few%20questions%20first.%20I%20would%20like%20to%20schedule%20a%20free%20introductory%20call.%0D%0A%0D%0AMy%20Name:%20%0D%0AMy%20Age:%20">Not sure yet? Get a free introductory call</a>
-                    <ChevronRightIcon size={16} className="group-hover:translate-x-0.5 transition duration-300" />
-                </p>
+
+                <div className="flex flex-col md:flex-row md:gap-1 text-sm leading-tight md:leading-normal text-left">
+                    <span className="font-semibold">Not sure yet?</span>
+                    <span className="font-normal text-pink-200/80">Get a free introductory call</span>
+                </div>
+
+                <ChevronRightIcon size={16} className="group-hover:translate-x-0.5 transition duration-300 shrink-0" />
             </motion.a>
-            <motion.h1 className="text-5xl/17 md:text-6xl/21 font-medium max-w-2xl text-center"
+
+            <motion.h1 className="text-5xl/17 md:text-6xl/21 font-medium max-w-2xl text-center mt-6"
                 initial={{ y: 50, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
@@ -36,22 +43,27 @@ export default function HeroSection() {
                 Empathetic Therapy for a {" "}
                 <span className="move-gradient px-3 rounded-xl text-nowrap">Better You</span>
             </motion.h1>
+
             <motion.p className="text-base text-center text-slate-200 max-w-lg mt-6"
                 initial={{ y: 50, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2, type: "spring", stiffness: 320, damping: 70, mass: 1 }}
             >
-                Professional, affordable support for everyone. Your journey to mental wellness starts here.</motion.p>
+                Professional, affordable support for everyone. Your journey to mental wellness starts here.
+            </motion.p>
+
             <motion.div className="flex items-center gap-4 mt-8"
                 initial={{ y: 50, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ type: "spring", stiffness: 320, damping: 70, mass: 1 }}
             >
-                <button className="bg-pink-600 hover:bg-pink-700 text-white rounded-full px-7 h-11">
-                    <a href="mailto:yourmom@email.com?subject=Booking%20Request:%20New%20Session&body=Hi,%0D%0A%0D%0AI%20would%20like%20to%20book%20a%20therapy%20session.%20Please%20let%20me%20know%20your%20available%20slots%20for%20this%20week.%0D%0A%0D%0APreferred%20Days/Times:%20">Book a Session</a>
-                </button>
+                <a href="mailto:healwithkomalhotchandani@gmail.com?subject=Booking%20Request:%20New%20Session&body=Hi,%0D%0A%0D%0AI%20would%20like%20to%20book%20a%20therapy%20session.%20Please%20let%20me%20know%20your%20available%20slots%20for%20this%20week.%0D%0A%0D%0APreferred%20Days/Times:%20">
+                    <button className="bg-pink-600 hover:bg-pink-700 text-white rounded-full px-7 h-11 transition-colors">
+                        Book a Session
+                    </button>
+                </a>
             </motion.div>
 
             <div className="flex flex-wrap justify-center items-center gap-4 md:gap-14 mt-12">
