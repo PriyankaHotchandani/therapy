@@ -114,8 +114,7 @@ export default function PhilosophySection() {
                                 <h4 className="text-lg font-semibold text-slate-200">Mission</h4>
                             </div>
                             <p className="text-slate-400 leading-relaxed relative z-10">
-                                After years of learning, listening, and personal growth, I offer counselling from a warm, confidential home-based space dedicated to emotional wellness. My mission is to help individuals feel <span className="text-slate-200 font-medium">heard, supported, and empowered</span> to heal, gain clarity, and restore emotional balance through ethical and compassionate counselling.
-                            </p>
+                                After years of learning, listening, and personal growth, I offer counselling from a warm, confidential space. My mission is to help individuals feel <span className="text-slate-200 font-medium">heard, supported, and empowered</span> to heal, gain clarity, and restore emotional balance through ethical counselling.                            </p>
                         </div>
 
                         {/* Vision Card */}
@@ -128,8 +127,7 @@ export default function PhilosophySection() {
                                 <h4 className="text-lg font-semibold text-slate-200">Vision</h4>
                             </div>
                             <p className="text-slate-400 leading-relaxed relative z-10">
-                                My vision is to support people in building emotional strength, self-awareness, and inner resilience, enabling them to face life’s challenges with clarity and confidence. I strive to empower individuals to gain deeper self-understanding and psychological growth, while providing <span className="text-slate-200 font-medium">compassionate, practical, and affordable</span> support that is accessible to the common masses.
-                            </p>
+                                To support people in building emotional strength, self-awareness, and inner resilience. I strive to empower individuals to gain deeper self-understanding, providing support that is <span className="text-slate-200 font-medium">compassionate, practical, and accessible</span> to everyone.                            </p>
                         </div>
 
                     </motion.div>

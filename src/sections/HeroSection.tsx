@@ -11,7 +11,7 @@ export default function HeroSection() {
     ];
 
     return (
-        <div className="relative flex flex-col items-center justify-center px-4 md:px-16 lg:px-24 xl:px-32">
+        <div className="relative flex flex-col items-center justify-center px-4 md:px-16 lg:px-24 xl:px-32 overflow-hidden">
             <div className="absolute top-30 -z-10 left-1/4 size-72 bg-pink-600 blur-[300px]"></div>
 
             <motion.a
@@ -59,7 +59,7 @@ export default function HeroSection() {
                 viewport={{ once: true }}
                 transition={{ type: "spring", stiffness: 320, damping: 70, mass: 1 }}
             >
-                <a href="mailto:healwithkomalhotchandani@gmail.com?subject=Booking%20Request:%20New%20Session&body=Hi,%0D%0A%0D%0AI%20would%20like%20to%20book%20a%20therapy%20session.%20Please%20let%20me%20know%20your%20available%20slots%20for%20this%20week.%0D%0A%0D%0APreferred%20Days/Times:%20">
+                <a href="#pricing">
                     <button className="bg-pink-600 hover:bg-pink-700 text-white rounded-full px-7 h-11 transition-colors">
                         Book a Session
                     </button>
