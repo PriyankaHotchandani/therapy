@@ -41,20 +41,30 @@ export default function TestimonialSection() {
                             <div
                                 key={index}
                                 onClick={() => setActiveTestimonial(testimonial)}
-                                className="cursor-pointer transition-transform duration-300 active:scale-95 md:hover:scale-105 group h-full select-none"
+                                className="cursor-pointer transition-transform duration-300 active:scale-95 md:hover:scale-105 group h-full select-none relative"
                             >
                                 <div
-                                    className="relative h-[240px] overflow-hidden rounded-xl md:w-auto md:h-auto md:overflow-visible"
+                                    className="relative h-[240px] overflow-hidden rounded-xl md:w-auto md:h-auto md:overflow-visible border border-transparent md:hover:border-pink-500/30 transition-colors"
                                     style={{
                                         flex: isMobile ? '0 0 280px' : 'auto',
                                         width: isMobile ? '280px' : 'auto',
                                         whiteSpace: 'normal'
                                     }}
                                 >
+                                    {/* Card Content */}
                                     <div className="w-full h-full [&_*]:whitespace-normal [&_*]:break-words pointer-events-none">
                                         <TestimonialCard index={index} testimonial={testimonial} />
                                     </div>
-                                    <div className="absolute bottom-0 left-0 w-full h-28 bg-gradient-to-t from-black via-black/90 to-transparent md:hidden rounded-b-xl z-10 pointer-events-none"></div>
+
+                                    {/* --- MOBILE INDICATOR: "Tap to read" (ONLY VISIBLE ON MOBILE) --- */}
+                                    <div className="absolute bottom-4 left-0 w-full flex justify-center md:hidden z-20 pointer-events-none">
+                                        <span className="text-[10px] font-bold tracking-wide text-pink-200 bg-pink-950/80 px-3 py-1 rounded-full border border-pink-500/30 shadow-lg backdrop-blur-md animate-pulse">
+                                            Tap to read
+                                        </span>
+                                    </div>
+
+                                    {/* Fade Overlay for Mobile (Background for the "Tap" button) */}
+                                    <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-black via-black/90 to-transparent md:hidden rounded-b-xl z-10 pointer-events-none"></div>
                                 </div>
                             </div>
                         ))}
@@ -86,7 +96,6 @@ export default function TestimonialSection() {
                                 </div>
                             </div>
 
-                            {/* SCROLLER IS HERE: Only appears in the modal */}
                             <div className="max-h-[60vh] overflow-y-auto pr-2 custom-scrollbar">
                                 <p className="text-slate-300 leading-relaxed text-base italic text-justify">
                                     "{activeTestimonial.quote}"
