@@ -16,7 +16,7 @@ export const footerData: IFooter[] = [
         links: [
 
             // External Link to Government/NGO Help
-            { name: "Emergency Helplines", href: "https://icallhelpline.org/" },
+            { name: "Emergency Helplines", href: "https://findahelpline.com/countries/in/topics/suicidal-thoughts" },
 
             // External Link to Credible Articles
             { name: "Mental Health Blog", href: "https://www.verywellmind.com/" },
