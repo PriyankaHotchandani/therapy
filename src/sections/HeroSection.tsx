@@ -15,8 +15,7 @@ export default function HeroSection() {
             <div className="absolute top-30 -z-10 left-1/4 size-72 bg-pink-600 blur-[300px]"></div>
 
             <motion.a
-                href="mailto:healwithkomalhotchandani@gmail.com?subject=Request:%20Free%20Consultation%20Call&body=Hi,%0D%0A%0D%0AI%20am%20interested%20in%20therapy%20but%20have%20a%20few%20questions%20first.%20I%20would%20like%20to%20schedule%20a%20free%20consultation%20call.%0D%0A%0D%0AMy%20Name:%20%0D%0AMy%20Age:%20"
-                className="group inline-flex items-center gap-3 p-1.5 pr-4 rounded-full bg-pink-200/10 border border-white/10 hover:border-pink-500/30 transition-all mt-44 text-pink-100 w-fit max-w-full"
+                href="mailto:healwithkomalhotchandani@gmail.com?subject=Request:%20Free%20Consultation%20Call&body=Hi,%0D%0A%0D%0AI%20am%20interested%20in%20therapy%20but%20have%20a%20few%20questions%20first.%20I%20would%20like%20to%20schedule%20a%20free%20consultation%20call.%0D%0A%0D%0AMy%20Name:%20%0D%0AMy%20Age:%20%0D%0AMy%20Mobile%20Number:%20" className="group inline-flex items-center gap-3 p-1.5 pr-4 rounded-full bg-pink-200/10 border border-white/10 hover:border-pink-500/30 transition-all mt-44 text-pink-100 w-fit max-w-full"
                 initial={{ y: -20, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
