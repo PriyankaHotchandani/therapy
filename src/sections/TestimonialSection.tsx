@@ -11,11 +11,11 @@ export default function TestimonialSection() {
     const [isMobile, setIsMobile] = useState(false);
 
     const scrollRef = useRef<HTMLDivElement>(null);
-    const animationRef = useRef<number | null>(null);
-    const timeoutRef = useRef<number | null>(null);
 
     const isHoveringRef = useRef(false);
-    const isManualScrollingRef = useRef(false);
+    const isManualRef = useRef(false);
+
+    const animationRef = useRef<number | null>(null);
 
     useEffect(() => {
         const checkMobile = () => setIsMobile(window.innerWidth < 768);
@@ -24,22 +24,32 @@ export default function TestimonialSection() {
         return () => window.removeEventListener("resize", checkMobile);
     }, []);
 
+    // Triple data for seamless infinite scroll
     const extendedData = [...testimonialsData, ...testimonialsData, ...testimonialsData];
 
-    // --- SINGLETON ANIMATION LOOP ---
+    // --- ANIMATION LOOP ---
     useEffect(() => {
         const scrollContainer = scrollRef.current;
         if (!scrollContainer) return;
 
         const loop = () => {
-            if (!isHoveringRef.current && !isManualScrollingRef.current) {
-                scrollContainer.scrollLeft += 1.0;
+            // 1. INFINITE SCROLL RESET
+            const maxScroll = scrollContainer.scrollWidth;
+            const third = maxScroll / 3;
 
-                // Infinite Scroll Reset
-                if (scrollContainer.scrollLeft >= (scrollContainer.scrollWidth / 3) * 2) {
-                    scrollContainer.scrollLeft = scrollContainer.scrollWidth / 3;
-                }
+            if (scrollContainer.scrollLeft >= third * 2) {
+                scrollContainer.scrollLeft = scrollContainer.scrollLeft - third;
             }
+            else if (scrollContainer.scrollLeft <= 0) {
+                scrollContainer.scrollLeft = scrollContainer.scrollLeft + third;
+            }
+
+            // 2. AUTO-SCROLL MOVEMENT
+            if (!isHoveringRef.current && !isManualRef.current) {
+                scrollContainer.scrollLeft += 1.5;
+            }
+
+            // 3. Loop
             animationRef.current = requestAnimationFrame(loop);
         };
 
@@ -47,28 +57,24 @@ export default function TestimonialSection() {
 
         return () => {
             if (animationRef.current) cancelAnimationFrame(animationRef.current);
-            if (timeoutRef.current) clearTimeout(timeoutRef.current);
         };
     }, []);
 
-    // --- MANUAL SCROLL HANDLER ---
+    // --- BUTTON HANDLER ---
     const handleManualScroll = (direction: "left" | "right") => {
         if (scrollRef.current) {
-            if (timeoutRef.current) {
-                clearTimeout(timeoutRef.current);
-            }
+            isManualRef.current = true;
 
-            isManualScrollingRef.current = true;
+            const scrollAmount = isMobile ? 334 : 600;
 
-            const scrollAmount = isMobile ? 304 : 600;
             scrollRef.current.scrollBy({
                 left: direction === "left" ? -scrollAmount : scrollAmount,
                 behavior: "smooth",
             });
 
-            timeoutRef.current = setTimeout(() => {
-                isManualScrollingRef.current = false;
-            }, 1500);
+            setTimeout(() => {
+                isManualRef.current = false;
+            }, 600);
         }
     };
 
@@ -87,9 +93,9 @@ export default function TestimonialSection() {
                 {/* --- LEFT BUTTON --- */}
                 <button
                     onClick={() => handleManualScroll("left")}
-                    className="flex absolute left-2 md:-left-20 top-1/2 -translate-y-1/2 z-30 
+                    className="flex absolute left-2 md:-left-20 top-1/2 -translate-y-1/2 z-50 
                     p-3 rounded-full cursor-pointer transition-all duration-300 active:scale-95
-                    bg-white/5 backdrop-blur-md border border-white/10 text-white/70 
+                    bg-black/30 md:bg-white/5 backdrop-blur-md border border-white/10 text-white 
                     hover:text-white hover:bg-white/10 hover:border-white/30 shadow-lg"
                 >
                     <ChevronLeft size={24} />
@@ -98,9 +104,9 @@ export default function TestimonialSection() {
                 {/* --- RIGHT BUTTON --- */}
                 <button
                     onClick={() => handleManualScroll("right")}
-                    className="flex absolute right-2 md:-right-20 top-1/2 -translate-y-1/2 z-30 
+                    className="flex absolute right-2 md:-right-20 top-1/2 -translate-y-1/2 z-50 
                     p-3 rounded-full cursor-pointer transition-all duration-300 active:scale-95
-                    bg-white/5 backdrop-blur-md border border-white/10 text-white/70 
+                    bg-black/30 md:bg-white/5 backdrop-blur-md border border-white/10 text-white 
                     hover:text-white hover:bg-white/10 hover:border-white/30 shadow-lg"
                 >
                     <ChevronRight size={24} />
@@ -109,19 +115,18 @@ export default function TestimonialSection() {
                 {/* --- SCROLL CONTAINER --- */}
                 <div
                     ref={scrollRef}
-                    className="flex items-stretch gap-6 overflow-x-auto no-scrollbar scroll-smooth py-12 px-4 
+                    className="flex items-stretch gap-6 overflow-x-auto no-scrollbar py-12 px-4 
+                    md:[mask-image:linear-gradient(to_right,transparent,white_10%,white_90%,transparent)]
                     [&:has(.testimonial-card:hover)_.testimonial-card:not(:hover)]:blur-[2px] 
-                    [&:has(.testimonial-card:hover)_.testimonial-card:not(:hover)]:scale-95
-                    [mask-image:linear-gradient(to_right,transparent,white_10%,white_90%,transparent)]"
+                    [&:has(.testimonial-card:hover)_.testimonial-card:not(:hover)]:scale-95"
                     style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
                 >
                     {extendedData.map((testimonial: ITestimonial, index: number) => (
                         <div
                             key={index}
-                            className="testimonial-card flex-shrink-0 cursor-pointer select-none relative transition-all duration-300 ease-out 
-                                       md:hover:!blur-none md:hover:scale-110 md:hover:z-20
-                                       h-90 md:h-auto"
-                            style={{ width: isMobile ? '300px' : '36rem' }}
+                            className="testimonial-card flex-shrink-0 cursor-pointer h-90 md:h-auto select-none relative transition-all duration-300 ease-out 
+                                       md:hover:!blur-none md:hover:scale-110 md:hover:z-20"
+                            style={{ width: isMobile ? '310px' : '36rem' }}
 
                             onClick={() => setActiveTestimonial(testimonial)}
                             onMouseEnter={() => { isHoveringRef.current = true; }}
@@ -136,7 +141,7 @@ export default function TestimonialSection() {
                                         <TestimonialCard index={index} testimonial={testimonial} />
                                     </div>
 
-                                    {/* Mobile Indicator */}
+                                    {/* Mobile UI */}
                                     <div className="absolute bottom-4 left-0 w-full flex justify-center md:hidden z-20 pointer-events-none">
                                         <span className="text-[10px] font-bold tracking-wide text-pink-200 bg-pink-950/80 px-3 py-1 rounded-full border border-pink-500/30 shadow-lg backdrop-blur-md animate-pulse">
                                             Tap to read

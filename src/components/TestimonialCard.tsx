@@ -9,8 +9,10 @@ export default function TestimonialCard({ testimonial }: TestimonialCardProps) {
                     src={testimonial.image}
                     alt={testimonial.name}
                 />
-                <div className="flex flex-col">
-                    <p className="font-semibold text-white text-lg leading-tight">{testimonial.name}</p>
+                <div className="flex flex-col overflow-hidden">
+                    <p className="font-semibold text-white text-sm md:text-lg leading-tight whitespace-nowrap truncate">
+                        {testimonial.name}
+                    </p>
                     <span className="text-xs text-pink-400 font-medium">{testimonial.handle}</span>
                 </div>
             </div>
