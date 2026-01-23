@@ -50,6 +50,7 @@ export interface IPricing {
     name: string;
     price: number;
     period: string;
+    perSession?: number;
     features: string[];
     mostPopular: boolean;
     buttonText: string;

@@ -15,7 +15,7 @@ export default function HeroSection() {
             <div className="absolute top-30 -z-10 left-1/4 size-72 bg-pink-600 blur-[300px]"></div>
 
             <motion.a
-                href="mailto:healwithkomalhotchandani@gmail.com?subject=Request:%20Free%20Introductory%20Call&body=Hi,%0D%0A%0D%0AI%20am%20interested%20in%20therapy%20but%20have%20a%20few%20questions%20first.%20I%20would%20like%20to%20schedule%20a%20free%20introductory%20call.%0D%0A%0D%0AMy%20Name:%20%0D%0AMy%20Age:%20"
+                href="mailto:healwithkomalhotchandani@gmail.com?subject=Request:%20Free%20Consultation%20Call&body=Hi,%0D%0A%0D%0AI%20am%20interested%20in%20therapy%20but%20have%20a%20few%20questions%20first.%20I%20would%20like%20to%20schedule%20a%20free%20consultation%20call.%0D%0A%0D%0AMy%20Name:%20%0D%0AMy%20Age:%20"
                 className="group inline-flex items-center gap-3 p-1.5 pr-4 rounded-full bg-pink-200/10 border border-white/10 hover:border-pink-500/30 transition-all mt-44 text-pink-100 w-fit max-w-full"
                 initial={{ y: -20, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
@@ -28,7 +28,7 @@ export default function HeroSection() {
 
                 <div className="flex flex-col md:flex-row md:gap-1 text-sm leading-tight md:leading-normal text-left">
                     <span className="font-semibold">Not sure yet?</span>
-                    <span className="font-normal text-pink-200/80">Get a free introductory call</span>
+                    <span className="font-normal text-pink-200/80">Get a free consultation call</span>
                 </div>
 
                 <ChevronRightIcon size={16} className="group-hover:translate-x-0.5 transition duration-300 shrink-0" />
@@ -40,7 +40,7 @@ export default function HeroSection() {
                 viewport={{ once: true }}
                 transition={{ type: "spring", stiffness: 240, damping: 70, mass: 1 }}
             >
-                Empathetic Therapy for a {" "}
+                Empathetic, Affordable Therapy for a {" "}
                 <span className="move-gradient px-3 rounded-xl text-nowrap">Better You</span>
             </motion.h1>
 

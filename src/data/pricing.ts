@@ -3,10 +3,10 @@ import type { IPricing } from "../types";
 export const pricingData: IPricing[] = [
     {
         name: "Pay-As-You-Go",
-        price: 499,
+        price: 699,
         period: "session",
         features: [
-            "50-minute 1-on-1 consultation",
+            "50-minute 1-on-1 session",
             "Secure Video Call",
             "No commitment required",
             "Instant online booking",
@@ -18,11 +18,11 @@ export const pricingData: IPricing[] = [
     },
     {
         name: "Wellness Bundle",
-        price: 1799,
+        price: 2599,
         period: "4 sessions",
+        perSession: 650,
         features: [
             "4 x 50-minute sessions",
-            "Personalized Roadmap",
             "Valid for 60 days",
             "Priority slot booking",
             "Perfect for weekly therapy",
@@ -35,8 +35,9 @@ export const pricingData: IPricing[] = [
     },
     {
         name: "Deep Healing",
-        price: 3499,
+        price: 4799,
         period: "8 sessions",
+        perSession: 600,
         features: [
             "8 x 50-minute sessions",
             "Valid for 4 months",
