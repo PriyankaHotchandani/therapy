@@ -88,6 +88,16 @@ export default function ContactSection() {
                 text3="Taking the first step is often the hardest. Whether you have questions or are ready to book, reach out today."
             />
 
+            <div className="flex justify-center mt-6">
+                <a
+                    href="tel:+919476046420"
+                    className="flex items-center gap-2 text-slate-300 hover:text-pink-500 transition"
+                >
+                    <PhoneIcon className="size-5" />
+                    Prefer to call? +91 94760 46420
+                </a>
+            </div>
+
             <form ref={formRef} onSubmit={sendEmail} className='grid sm:grid-cols-2 gap-3 sm:gap-5 max-w-2xl mx-auto text-slate-300 mt-16 w-full' >
 
                 {/* Name Field */}

@@ -1,5 +1,5 @@
 import { footerData } from "../data/footer";
-import { LinkedinIcon } from "lucide-react";
+import { LinkedinIcon, PhoneIcon } from "lucide-react";
 import { motion } from "motion/react";
 
 export default function Footer() {
@@ -46,6 +46,13 @@ export default function Footer() {
                 transition={{ type: "spring", stiffness: 280, damping: 70, mass: 1 }}
             >
                 <p className="max-w-150">Creating a safe, judgment-free space for your mental wellness journey.</p>
+                <a
+                    href="tel:+919476046420"
+                    className="flex items-center gap-2 mt-3 hover:text-pink-500 transition"
+                >
+                    <PhoneIcon className="size-4" />
+                    +91 94760 46420
+                </a>
                 {/* <div className="flex items-center gap-4 mt-3">
                     <a href="https://www.linkedin.com/in/komal-hotchandani-0b69b3344/" rel="noreferrer">
                         <LinkedinIcon className="size-5 hover:text-pink-500" />
