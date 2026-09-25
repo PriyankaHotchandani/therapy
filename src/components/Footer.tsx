@@ -53,6 +53,7 @@ export default function Footer() {
                     <PhoneIcon className="size-4" />
                     +91 94760 46420
                 </a>
+                <p className="text-xs">Based in New Delhi · Serving clients online across India</p>
                 {/* <div className="flex items-center gap-4 mt-3">
                     <a href="https://www.linkedin.com/in/komal-hotchandani-0b69b3344/" rel="noreferrer">
                         <LinkedinIcon className="size-5 hover:text-pink-500" />
